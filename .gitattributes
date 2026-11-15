@@ -1,1 +1,2 @@
 configs/debian/bashrc text eol=lf
+scripts/setup/*.sh text eol=lf

@@ -1,0 +1,12 @@
+name: workstation-docker-lab
+
+services:
+  smoke:
+    image: alpine:3.22
+    command:
+      - sh
+      - -c
+      - |
+        echo "WORKSTATION DOCKER COMPOSE: OK"
+        echo "Running inside Linux container"
+        cat /etc/alpine-release
