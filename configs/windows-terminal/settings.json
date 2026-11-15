@@ -73,6 +73,20 @@
                 "opacity": 85,
                 "source": "Windows.Terminal.PowershellCore",
                 "useAcrylic": true
+            },
+            {
+                "colorScheme": "Catppuccin Mocha",
+                "commandline": "wsl.exe -d Debian --cd /home/h4ckpd",
+                "font":
+                {
+                    "face": "JetBrainsMono Nerd Font"
+                },
+                "guid": "{1f96b97d-6efc-59bc-bfd5-d4a71aa3a5ac}",
+                "hidden": false,
+                "name": "Debian",
+                "opacity": 85,
+                "source": "Microsoft.WSL",
+                "useAcrylic": true
             }
         ]
     },
