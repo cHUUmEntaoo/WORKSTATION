@@ -1,0 +1,10 @@
+# Never commit sensitive or machine-specific state.
+.env
+*.pem
+*.key
+id_ed25519*
+**/backups/
+**/Rainmeter.ini
+**/settings.json.private
+.DS_Store
+Thumbs.db

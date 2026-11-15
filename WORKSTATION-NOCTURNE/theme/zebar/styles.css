@@ -1,0 +1,297 @@
+/* ============================================================
+   WORKSTATION ULTIMATE BAR - NOCTURNE v2.0
+   Replaces previous styles.css in its entirety.
+   ============================================================ */
+
+@import url('https://www.nerdfonts.com/assets/css/webfont.css');
+
+:root {
+  color-scheme: dark;
+  --ws-crust: #11111b;
+  --ws-base: #1e1e2e;
+  --ws-mantle: #181825;
+  --ws-surface: #313244;
+  --ws-surface-light: #45475a;
+  --ws-border: rgba(137, 180, 250, 0.20);
+  --ws-text: #cdd6f4;
+  --ws-muted: #a6adc8;
+  --ws-blue: #89b4fa;
+  --ws-mauve: #cba6f7;
+  --ws-green: #a6e3a1;
+  --ws-teal: #94e2d5;
+  --ws-yellow: #f9e2af;
+  --ws-red: #f38ba8;
+  --ws-radius: 9px;
+  --ws-font: 'JetBrainsMono Nerd Font', 'JetBrains Mono', 'Cascadia Code', Consolas, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body, #root { width: 100%; height: 100%; margin: 0; padding: 0; }
+html, body { overflow: hidden; }
+body {
+  color: var(--ws-text);
+  background: transparent;
+  font: 500 12px/1.2 var(--ws-font);
+  -webkit-font-smoothing: antialiased;
+}
+button { font: inherit; }
+button, .brand, .chip, .window-title, .clock { -webkit-user-select: none; user-select: none; }
+.nf { display: inline-block; flex: 0 0 auto; font-size: 13px; line-height: 1; }
+
+/* Full-width bar with subtle glass depth. */
+#root {
+  border-bottom: 1px solid rgba(137, 180, 250, 0.27);
+  background: linear-gradient(100deg, rgba(10,12,22,0.98), rgba(24,24,37,0.98) 55%, rgba(13,16,30,0.99));
+}
+.app {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(120px, 0.64fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  padding: 3px 12px;
+}
+.left, .center, .right, .workspaces, .wm-controls {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+.left { gap: 10px; overflow: hidden; }
+.center { justify-content: center; }
+.right { justify-content: flex-end; gap: 7px; overflow: hidden; }
+.wm-controls { gap: 5px; flex-shrink: 0; }
+
+/* Branding */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 28px;
+  padding: 0 9px 0 6px;
+  flex-shrink: 0;
+  border-radius: var(--ws-radius);
+  border: 1px solid var(--ws-border);
+  background: rgba(49,50,68,0.78);
+  color: var(--ws-text);
+  white-space: nowrap;
+}
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 19px;
+  height: 19px;
+  border-radius: 5px;
+  background: rgba(137,180,250,0.13);
+  color: var(--ws-blue);
+}
+.brand-mark .nf { font-size: 12px; }
+.brand-name { font-size: 11px; font-weight: 800; letter-spacing: .8px; }
+.brand-led {
+  width: 6px;
+  height: 6px;
+  margin-left: 1px;
+  background: var(--ws-green);
+  border-radius: 50%;
+  box-shadow: 0 0 7px rgba(166,227,161,0.55);
+}
+
+/* GlazeWM workspaces */
+.workspaces { gap: 5px; flex: 0 0 auto; }
+.workspace {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  min-width: 27px;
+  padding: 0 7px;
+  border: 1px solid rgba(69,71,90,0.92);
+  border-radius: 7px;
+  background: rgba(49,50,68,0.72);
+  color: var(--ws-muted);
+  font-size: 11px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: background .16s ease, border-color .16s ease, color .16s ease;
+}
+.workspace-indicator {
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  width: 10px;
+  height: 2px;
+  border-radius: 2px;
+  transform: translateX(-50%);
+  background: transparent;
+}
+.workspace.displayed:not(.focused) {
+  border-color: rgba(203,166,247,0.48);
+  color: var(--ws-text);
+  background: rgba(69,71,90,0.82);
+}
+.workspace.displayed:not(.focused) .workspace-indicator { background: var(--ws-mauve); }
+.workspace.focused {
+  background: var(--ws-blue);
+  border-color: var(--ws-blue);
+  color: var(--ws-crust);
+  box-shadow: 0 0 0 1px rgba(137,180,250,0.15);
+}
+.workspace.focused .workspace-indicator { background: var(--ws-crust); }
+.workspace:not(.focused):hover {
+  border-color: var(--ws-mauve);
+  background: rgba(203,166,247,0.20);
+  color: var(--ws-text);
+}
+.workspace:focus-visible, .control:focus-visible {
+  outline: 2px solid var(--ws-yellow);
+  outline-offset: 1px;
+}
+
+/* Active window: only where horizontal space permits. */
+.window-title {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  max-width: 410px;
+  color: var(--ws-muted);
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: rgba(49, 50, 68, .38);
+  border: 1px solid rgba(137, 180, 250, .12);
+  font-size: 11px;
+}
+.window-title .nf { color: var(--ws-mauve); }
+.window-title span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Center: calm, readable clock */
+.clock {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 28px;
+  min-width: 138px;
+  padding: 0 12px;
+  border: 1px solid rgba(137,180,250,0.32);
+  border-radius: var(--ws-radius);
+  background: rgba(137,180,250,.12);
+  color: var(--ws-blue);
+  font-weight: 700;
+  letter-spacing: .2px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.clock .nf { color: var(--ws-blue); }
+
+/* Status chips and performance meters */
+.chip, .control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 28px;
+  padding: 0 9px;
+  border: 1px solid rgba(69,71,90,0.95);
+  border-radius: var(--ws-radius);
+  background: rgba(49,50,68,0.73);
+  color: var(--ws-text);
+  white-space: nowrap;
+  flex: 0 0 auto;
+  font-variant-numeric: tabular-nums;
+}
+.control {
+  color: var(--ws-blue);
+  cursor: pointer;
+  transition: background .16s ease, border-color .16s ease;
+}
+.control:hover { background: rgba(69,71,90,0.95); border-color: var(--ws-blue); }
+.binding-mode { color: var(--ws-mauve); }
+.paused-button { color: var(--ws-yellow); border-color: rgba(249,226,175,0.50); font-weight: 800; }
+.tiling-direction { width: 29px; padding: 0; }
+
+.network .nf { color: var(--ws-teal); }
+.network-name { overflow: hidden; text-overflow: ellipsis; max-width: 84px; }
+.metric-ram .nf { color: var(--ws-mauve); }
+.metric-cpu .nf { color: var(--ws-blue); }
+.metric-label { font-size: 10px; letter-spacing: .15px; color: var(--ws-muted); }
+.metric-value { font-weight: 750; }
+.meter {
+  display: inline-block;
+  overflow: hidden;
+  width: 20px;
+  height: 3px;
+  margin-left: 2px;
+  border-radius: 4px;
+  background: var(--ws-surface-light);
+}
+.meter > span { display: block; height: 100%; border-radius: inherit; }
+.metric-ram .meter > span { background: var(--ws-mauve); }
+.metric-cpu .meter > span { background: var(--ws-blue); }
+.metric.alert .meter > span { background: var(--ws-red); }
+.metric.alert .metric-value, .battery.alert { color: var(--ws-red); }
+
+.battery { gap: 6px; }
+.battery > .nf:not(.charging-icon) { color: var(--ws-green); }
+.battery .charging-icon { color: var(--ws-yellow); font-size: 11px; }
+.weather .nf { color: var(--ws-yellow); }
+
+@media (max-width: 1580px) {
+  .window-title { max-width: 240px; }
+}
+@media (max-width: 1250px) {
+  .app { gap: 8px; padding-left: 8px; padding-right: 8px; }
+  .left { gap: 7px; }
+  .right { gap: 5px; }
+  .workspaces { gap: 3px; }
+  .workspace { min-width: 25px; padding: 0 5px; }
+  .meter { display: none; }
+  .chip { padding-left: 7px; padding-right: 7px; }
+  .clock { min-width: 126px; padding: 0 8px; }
+  .window-title { display: none; }
+  .app { grid-template-columns: minmax(0, 1fr) 0 minmax(0, 1fr); }
+}
+@media (max-width: 1050px) {
+  .metric-label, .network-name { display: none; }
+  .brand-name { letter-spacing: 0; }
+  .clock { min-width: 0; }
+}
+@media (max-width: 780px) {
+  .brand-name, .brand-led { display: none; }
+  .brand { padding: 0 5px; }
+  .right .weather { display: none; }
+  .app { grid-template-columns: minmax(0, 1fr) 0 minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .workspace, .control { transition: none; }
+}
+
+/* NOCTURNE finishing details */
+#root { position: relative; }
+#root::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 12px; right: 12px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(137,180,250,.36) 20%, rgba(203,166,247,.22) 50%, transparent);
+  pointer-events: none;
+}
+.brand { border-radius: 10px; }
+.workspace.focused { box-shadow: 0 0 12px rgba(137,180,250,.16); }
+.clock .nf { color: var(--ws-blue); }
+@media (max-width: 1400px) {
+  .right .weather { display: none; }
+  .metric .meter { display: none; }
+  .app { gap: 7px; }
+}
+@media (max-width: 1140px) {
+  .right .network-name { display: none; }
+  .right .metric-label { display: none; }
+  .brand-name { display: none; }
+  .brand { padding: 0 5px; }
+}

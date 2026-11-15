@@ -1,0 +1,9 @@
+*.sh text eol=lf
+*.lua text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.ps1 text eol=crlf
+*.ini text
+*.html text
+*.css text
+*.md text

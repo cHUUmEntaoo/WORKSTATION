@@ -1,0 +1,1 @@
+GlazeWM stays under its native installer-generated configuration. The Nocturne installer does **not** replace `config.yaml`; to preserve your personal shortcuts. Use `export-current.ps1` to export your tested GlazeWM config into your repo if you want to share your own layout. `install.ps1 -ApplyGaps` can patch gap values after backup.

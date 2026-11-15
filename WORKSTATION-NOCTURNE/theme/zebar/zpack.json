@@ -1,0 +1,34 @@
+{
+  "name": "WORKSTATION-BAR",
+  "version": "1.0.0",
+  "description": "WORKSTATION NOCTURNE status bar",
+  "widgets": [
+    {
+      "name": "with-glazewm",
+      "htmlPath": "./with-glazewm.html",
+      "zOrder": "top_most",
+      "shownInTaskbar": false,
+      "focused": false,
+      "resizable": false,
+      "transparent": true,
+      "presets": [
+        {
+          "name": "default",
+          "anchor": "top_left",
+          "offsetX": "0px",
+          "offsetY": "0px",
+          "width": "100%",
+          "height": "34px",
+          "monitorSelection": {
+            "type": "all"
+          },
+          "dockToEdge": {
+            "enabled": true,
+            "edge": "top",
+            "windowMargin": "0px"
+          }
+        }
+      ]
+    }
+  ]
+}
