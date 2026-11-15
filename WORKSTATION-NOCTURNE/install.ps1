@@ -102,6 +102,8 @@ if ($rainmeter -and -not $SkipRainmeter) {
     & $rainmeter '!DeactivateConfig' 'WORKSTATION\Operations' | Out-Null
     & $rainmeter '!DeactivateConfig' 'WORKSTATION\ControlCenter' | Out-Null
     & $rainmeter '!DeactivateConfig' 'WORKSTATION\Launcher' | Out-Null
+    & $rainmeter '!DeactivateConfig' 'WORKSTATION\Activity' | Out-Null
+    & $rainmeter '!DeactivateConfig' 'WORKSTATION\Home' | Out-Null
     & $rainmeter '!ActivateConfig' 'WORKSTATION\Dock' 'Dock.ini' | Out-Null
     & $rainmeter '!ZPos' '-2' 'WORKSTATION\Dock' | Out-Null
 }

@@ -112,3 +112,14 @@ Windows 11
 This repository bundles custom configuration files and a procedurally created wallpaper. [GlazeWM](https://github.com/glzr-io/glazewm), [Zebar](https://github.com/glzr-io/zebar), and [Rainmeter](https://www.rainmeter.net/) are separate third-party projects, with their own licenses and distribution terms. Not affiliated with them.
 
 The supplied configuration/scripts are made available under the [MIT License](LICENSE). The upstream dependencies retain their own licenses. Feel free to fork and adapt, and report problems through GitHub Issues.
+
+## NOCTURNE INTERACTIVE V2
+
+The updated Rainmeter dock includes Home, Launcher, Activity, Operations
+and Control Center. The 60px desktop dock and existing GlazeWM shortcuts
+are preserved. After downloading/cloning this repository and installing
+GlazeWM, Zebar and Rainmeter, run
+`./WORKSTATION-NOCTURNE/install.ps1 -SetWallpaper` in PowerShell
+from the repository root. The public installer recursively installs the
+new Rainmeter modules. Test the new Home / Activity buttons and read
+`WORKSTATION-NOCTURNE/README.md` for limitations and rollback details.

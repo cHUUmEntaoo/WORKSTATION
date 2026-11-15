@@ -127,3 +127,19 @@ commits only the Nocturne files changed by this repair to your GitHub remote.
 The included wallpaper is an original Red Team image. When cloning, use
 `install.ps1 -ApplyGlazeWM -SetWallpaper` only if you agree to replacing your
 existing GlazeWM keybindings (the installer creates a backup).
+## NOCTURNE Interactive UI V2
+
+Install/update from the separate NOCTURNE_INTERACTIVE_V2.zip package by
+running `upgrade.ps1` inside the extracted folder. This preserves GlazeWM,
+Zebar, wallpaper, WSL and Docker. It backs up old Rainmeter files first.
+
+Dock (desktop layer, reserved 60px): Home, Launcher, Activity, Operations,
+Control Center, Terminal, Explorer, Settings and Task Manager. Only one
+expandable Rainmeter module opens at a time; popups intentionally overlay
+app windows briefly. Home has real CPU/RAM metrics, calendar and global
+media key buttons. Activity offers master volume and links to the actual
+Windows Notification Center (Win+N) and Quick Settings (Win+A). It does not
+claim to read private Windows notifications or toggle Wi-Fi directly.
+
+Rollback: run `restore.ps1 -BackupPath <backup-directory>` from the
+upgrade package. Reopen Rainmeter if needed. No automatic git push occurs.
