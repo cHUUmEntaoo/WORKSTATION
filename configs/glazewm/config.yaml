@@ -281,6 +281,10 @@ keybindings:
   - commands: ['shell-exec wt']
     bindings: ['alt+enter']
 
+  # Debian GNU/Linux 13 - WSL 2.
+  - commands: ['shell-exec wt -p Debian']
+    bindings: ['alt+ctrl+enter']
+
   # Visual Studio Code.
   - commands: ['shell-exec code']
     bindings: ['alt+shift+c']
