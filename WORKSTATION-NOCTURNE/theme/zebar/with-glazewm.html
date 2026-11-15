@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#1e1e2e" />
-    <title>WORKSTATION BAR — NOCTURNE</title>
+    <title>WORKSTATION NOCTURNE — RED TEAM TOP BAR</title>
     <link rel="icon" href="data:;" />
     <link rel="stylesheet" type="text/css" href="./styles.css" />
 
@@ -131,9 +131,12 @@
             <div className="left">
               <div className="brand" title="WORKSTATION ULTIMATE">
                 <span className="brand-mark"><i className="nf nf-fa-windows" aria-hidden="true"></i></span>
-                <span className="brand-name">WORKSTATION</span>
+                <span className="brand-stack"><span className="brand-name">WORKSTATION</span><span className="brand-subtitle">NOCTURNE</span></span>
                 <span className="brand-led" aria-hidden="true"></span>
               </div>
+
+              <div className="red-team-tag" title="Tema RED TEAM"><i className="nf nf-md-target" aria-hidden="true"></i><span>RED TEAM</span></div>
+              <div className={`wm-health${wm ? ' connected' : ''}`} title={wm ? 'GlazeWM conectado' : 'GlazeWM no disponible'}><span className="wm-health-dot"></span><span>{wm ? 'SYSTEM READY' : 'WM OFFLINE'}</span></div>
 
               {wm && (
                 <div className="workspaces" aria-label="Espacios de trabajo">

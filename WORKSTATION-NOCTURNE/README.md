@@ -143,3 +143,18 @@ claim to read private Windows notifications or toggle Wi-Fi directly.
 
 Rollback: run `restore.ps1 -BackupPath <backup-directory>` from the
 upgrade package. Reopen Rainmeter if needed. No automatic git push occurs.
+
+## NOCTURNE COMMAND DECK V3
+
+Barra Zebar de 48px con ventanas reales de GlazeWM, indicadores de sistema,
+media controls, dock lateral de 60px, Home, Activity y Launcher con datos
+reales de Windows. Instala las dependencias, despues ejecuta:
+`./WORKSTATION-NOCTURNE/install-v3.ps1`. Documentacion:
+`WORKSTATION-NOCTURNE/README-V3.md`. Backups y restauracion incluidos.
+## WORKSTATION NOCTURNE V3.1
+
+Command Deck V3 with the working Red Team top bar,
+interactive Rainmeter panels and real system metrics.
+
+Read [V3.1 documentation](README-V3.1.md) before installing
+or upgrading an existing workstation.

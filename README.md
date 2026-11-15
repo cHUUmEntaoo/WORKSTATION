@@ -123,3 +123,16 @@ GlazeWM, Zebar and Rainmeter, run
 from the repository root. The public installer recursively installs the
 new Rainmeter modules. Test the new Home / Activity buttons and read
 `WORKSTATION-NOCTURNE/README.md` for limitations and rollback details.
+
+## NOCTURNE COMMAND DECK V3
+
+Barra Zebar de 48px con ventanas reales de GlazeWM, indicadores de sistema,
+media controls, dock lateral de 60px, Home, Activity y Launcher con datos
+reales de Windows. Instala las dependencias, despues ejecuta:
+`./WORKSTATION-NOCTURNE/install-v3.ps1`. Documentacion:
+`WORKSTATION-NOCTURNE/README-V3.md`. Backups y restauracion incluidos.
+## NOCTURNE V3.1
+
+The current Command Deck, Red Team status bar and
+interactive desktop are documented in
+[WORKSTATION-NOCTURNE/README-V3.1.md](WORKSTATION-NOCTURNE/README-V3.1.md).
