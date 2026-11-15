@@ -283,3 +283,13 @@ esac
 # ==========================================
 # END - WORKSTATION DEBIAN SHELL
 # ==========================================
+
+
+# ==========================================
+# WORKSTATION - SYSTEMD SSH AGENT
+# ==========================================
+
+# Reuse the systemd-managed SSH agent.
+if [ -n "${XDG_RUNTIME_DIR:-}" ] && [ -S "$XDG_RUNTIME_DIR/openssh_agent" ]; then
+    export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/openssh_agent"
+fi
