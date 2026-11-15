@@ -1,0 +1,513 @@
+/**
+ * Import the Nerdfonts icon font.
+ * Ref https://www.nerdfonts.com/cheat-sheet for a cheatsheet of available Nerdfonts icons.
+ */
+@import 'https://www.nerdfonts.com/assets/css/webfont.css';
+
+:root {
+  --text-size: 12px;
+  --icon-size: 12px;
+
+  --text-color-light: rgba(0 0 0 / 95%);
+  --text-color-dark: rgba(255 255 255 / 95%);
+
+  --icon-color-light: LightSteelBlue;
+  --icon-color-dark: rgba(115 130 175 / 95%);
+
+  --background-color-light: rgba(238 238 238 / 90%);
+  --background-color-dark: linear-gradient(
+    rgb(0 0 0 / 90%),
+    rgb(5 2 20 / 85%)
+  );
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    color: var(--text-color-light);
+  }
+
+  i {
+    color: var(--icon-color-light);
+  }
+
+  #root {
+    background: var(--background-color-light);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: var(--text-color-dark);
+  }
+
+  i {
+    color: var(--icon-color-dark);
+  }
+
+  #root {
+    background: var(--background-color-dark);
+  }
+}
+
+i {
+  margin-right: 7px;
+  font-size: var(--icon-size);
+}
+
+body {
+  font-family: ui-monospace, monospace;
+  font-size: var(--text-size);
+  overflow: hidden;
+}
+
+div,
+span,
+p {
+  cursor: default;
+  user-select: none;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+#root {
+  border-bottom: 1px solid rgb(255 255 255 / 5%);
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  height: 100%;
+  padding: 4px 1.5vw;
+}
+
+.left,
+.center,
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.center {
+  justify-self: center;
+}
+
+.right {
+  justify-self: end;
+}
+
+.logo,
+.binding-mode,
+.tiling-direction,
+.paused-button,
+.network,
+.memory,
+.cpu,
+.battery {
+  margin-right: 20px;
+}
+
+.workspaces {
+  display: flex;
+  align-items: center;
+}
+
+.workspace {
+  background: rgb(255 255 255 / 5%);
+  margin-right: 4px;
+  padding: 4px 8px;
+  color: rgb(255 255 255 / 90%);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+
+  &.displayed {
+    background: rgb(255 255 255 / 15%);
+  }
+
+  &.focused,
+  &:hover {
+    background: rgb(75 115 255 / 50%);
+  }
+}
+
+.binding-mode,
+.tiling-direction,
+.paused-button {
+  background: rgb(255 255 255 / 15%);
+  color: rgb(255 255 255 / 90%);
+  border-radius: 2px;
+  line-height: 1;
+  padding: 4px 8px;
+  border: 0;
+  cursor: pointer;
+}
+
+.binding-mode {
+  margin-right: 4px;
+}
+
+.cpu .high-usage {
+  color: #900029;
+}
+
+.battery {
+  position: relative;
+}
+
+.battery .charging-icon {
+  position: absolute;
+  font-size: 7px;
+  left: -8px;
+  top: 3px;
+}
+
+
+/* =========================================
+   WORKSTATION-BAR
+   Theme: Catppuccin Mocha
+   Version: 0.1.0
+   ========================================= */
+
+:root {
+  --ws-base: #1e1e2e;
+  --ws-crust: #11111b;
+  --ws-surface: #313244;
+  --ws-text: #cdd6f4;
+  --ws-blue: #89b4fa;
+  --ws-mauve: #cba6f7;
+  --ws-green: #a6e3a1;
+  --ws-red: #f38ba8;
+}
+
+/* Main bar */
+
+#root {
+  background: linear-gradient(
+    90deg,
+    rgba(17, 17, 27, 0.96),
+    rgba(30, 30, 46, 0.93)
+  );
+  border-bottom: 1px solid rgba(137, 180, 250, 0.25);
+}
+
+body {
+  color: var(--ws-text);
+}
+
+i {
+  color: var(--ws-blue);
+}
+
+/* Workspaces */
+
+.workspace {
+  background: var(--ws-surface);
+  color: var(--ws-text);
+  border-radius: 6px;
+}
+
+.workspace.displayed {
+  background: #45475a;
+}
+
+.workspace.focused,
+.workspace:hover {
+  background: var(--ws-blue);
+  color: var(--ws-crust);
+}
+
+/* Controls */
+
+.binding-mode,
+.tiling-direction,
+.paused-button {
+  background: var(--ws-surface);
+  color: var(--ws-text);
+  border-radius: 6px;
+}
+
+/* Performance alerts */
+
+.cpu .high-usage {
+  color: var(--ws-red);
+}
+
+
+
+
+/* WORKSTATION branding */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 16px;
+  padding: 5px 10px;
+  background: #313244;
+  border: 1px solid #45475a;
+  border-radius: 7px;
+  color: #cdd6f4;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.brand i {
+  margin-right: 0;
+  color: #89b4fa;
+}
+
+
+
+/* =========================================
+   WORKSTATION - Performance Modules
+   ========================================= */
+
+/* CPU and RAM containers */
+
+.right .cpu,
+.right .memory {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #313244;
+  border: 1px solid #45475a;
+  border-radius: 7px;
+
+  padding: 5px 10px;
+  margin-right: 8px;
+
+  color: #cdd6f4;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* CPU icon */
+
+.right .cpu i {
+  color: #89b4fa;
+  margin-right: 7px;
+}
+
+/* RAM icon */
+
+.right .memory i {
+  color: #cba6f7;
+  margin-right: 7px;
+}
+
+/* High CPU usage warning */
+
+.right .cpu .high-usage {
+  color: #f38ba8;
+  font-weight: 700;
+}
+
+
+
+/* =========================================
+   WORKSTATION - Network, Battery & Weather
+   ========================================= */
+
+.right .network,
+.right .battery,
+.right .weather {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  background: #313244;
+  border: 1px solid #45475a;
+  border-radius: 7px;
+
+  padding: 5px 10px;
+  margin-right: 8px;
+
+  color: #cdd6f4;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Icon spacing */
+
+.right .network i,
+.right .battery i,
+.right .weather i {
+  margin-right: 0;
+}
+
+/* Network */
+
+.right .network i {
+  color: #94e2d5;
+}
+
+/* Battery */
+
+.right .battery i {
+  color: #a6e3a1;
+}
+
+/* Charging indicator */
+
+.right .battery .charging-icon {
+  position: absolute;
+  left: -7px;
+  top: 2px;
+  font-size: 8px;
+  color: #f9e2af;
+}
+
+/* Weather */
+
+.right .weather i {
+  color: #f9e2af;
+}
+
+
+
+/* =========================================
+   WORKSTATION - Workspace Buttons
+   ========================================= */
+
+.left .workspaces {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Inactive workspaces */
+
+.left .workspace {
+  min-width: 24px;
+  margin-right: 0;
+  padding: 5px 10px;
+
+  background: #313244;
+  color: #a6adc8;
+
+  border: 1px solid #45475a;
+  border-radius: 7px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+/* Visible workspaces */
+
+.left .workspace.displayed {
+  background: #45475a;
+  color: #cdd6f4;
+}
+
+/* Focused workspace */
+
+.left .workspace.focused,
+.left .workspace.focused.displayed {
+  background: #89b4fa;
+  color: #11111b;
+  border-color: #89b4fa;
+}
+
+/* Hover effect */
+
+.left .workspace:hover {
+  background: #cba6f7;
+  color: #11111b;
+  border-color: #cba6f7;
+}
+
+
+
+/* =========================================
+   WORKSTATION - Center Clock
+   ========================================= */
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #313244;
+  border: 1px solid #45475a;
+  border-radius: 7px;
+
+  padding: 5px 14px;
+
+  color: #cdd6f4;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+
+
+
+/* =========================================
+   WORKSTATION - GlazeWM Controls
+   ========================================= */
+
+.right .tiling-direction,
+.right .binding-mode,
+.right .paused-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #313244;
+  border: 1px solid #45475a;
+  border-radius: 7px;
+
+  padding: 5px 10px;
+  margin-right: 8px;
+
+  color: #89b4fa;
+  font-size: 12px;
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+/* Hover effect */
+
+.right .tiling-direction:hover,
+.right .binding-mode:hover,
+.right .paused-button:hover {
+  background: #45475a;
+  border-color: #89b4fa;
+  color: #cdd6f4;
+}
+
+/* Paused state */
+
+.right .paused-button {
+  color: #f9e2af;
+  border-color: #f9e2af;
+}
+
+/* Binding mode */
+
+.right .binding-mode {
+  color: #cba6f7;
+}
+
+

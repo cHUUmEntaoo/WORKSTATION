@@ -1,0 +1,116 @@
+
+# ==================================================
+# WORKSTATION
+# Git Ignore Configuration
+# Windows 11 | Development | Cybersecurity
+# ==================================================
+
+# --------------------------------------------------
+# 1. Environment variables and secrets
+# --------------------------------------------------
+
+.env
+.env.*
+!.env.example
+
+*.secret
+*.secrets
+*.credentials
+
+# --------------------------------------------------
+# 2. Private keys and certificates
+# --------------------------------------------------
+
+*.pem
+*.key
+*.p12
+*.pfx
+*.p8
+*.jks
+*.keystore
+*.kdbx
+
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+id_ecdsa
+id_ecdsa.*
+
+# --------------------------------------------------
+# 3. Browser profiles and private sessions
+# --------------------------------------------------
+
+configs/firefox/profiles/
+configs/firefox/sessionstore*
+configs/firefox/cookies.sqlite
+configs/firefox/logins.json
+configs/firefox/key4.db
+configs/firefox/places.sqlite
+
+# --------------------------------------------------
+# 4. Backups and temporary files
+# --------------------------------------------------
+
+backups/
+*.bak
+*.backup
+*.tmp
+*.temp
+*.old
+
+# --------------------------------------------------
+# 5. Logs and diagnostic outputs
+# --------------------------------------------------
+
+*.log
+logs/
+crash-reports/
+
+# --------------------------------------------------
+# 6. Development dependencies and caches
+# --------------------------------------------------
+
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+bin/
+obj/
+dist/
+build/
+
+# --------------------------------------------------
+# 7. Editor temporary files
+# --------------------------------------------------
+
+.vs/
+.idea/
+*.swp
+*.swo
+*~
+
+# --------------------------------------------------
+# 8. Operating system generated files
+# --------------------------------------------------
+
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# --------------------------------------------------
+# 9. Local machine configuration
+# --------------------------------------------------
+
+*.local.json
+*.local.yaml
+*.local.yml
+
+# ==================================================
+# END WORKSTATION GITIGNORE
+# ==================================================
+
+# Preview image pending privacy review
+/configs/zebar/workstation-bar/resources/preview-image-1.png

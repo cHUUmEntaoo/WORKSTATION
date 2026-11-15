@@ -1,0 +1,1 @@
+oh-my-posh init pwsh --config "$HOME\.config\workstation\ohmyposh\theme.omp.json" | Invoke-Expression
