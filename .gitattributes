@@ -1,2 +1,3 @@
 configs/debian/bashrc text eol=lf
 scripts/setup/*.sh text eol=lf
+examples/docker-compose/*.yaml text eol=lf
