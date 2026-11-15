@@ -33,7 +33,7 @@ gaps:
     top: '36px'
     right: '0px'
     bottom: '0px'
-    left: '0px'
+    left: '60px'
 
 # ==========================================
 # CATPPUCCIN MOCHA WINDOW EFFECTS

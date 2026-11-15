@@ -112,3 +112,18 @@ Windows 11
 This repository bundles custom configuration files and a procedurally created wallpaper. [GlazeWM](https://github.com/glzr-io/glazewm), [Zebar](https://github.com/glzr-io/zebar), and [Rainmeter](https://www.rainmeter.net/) are separate third-party projects, with their own licenses and distribution terms. Not affiliated with them.
 
 The supplied configuration/scripts are made available under the [MIT License](LICENSE). The upstream dependencies retain their own licenses. Feel free to fork and adapt, and report problems through GitHub Issues.
+
+## DESKTOP DOCK / RED TEAM V1.1
+
+The left Rainmeter dock uses **On desktop** (`DefaultAlwaysOnTop=-2`) and
+GlazeWM reserves a **60px left rail**. This keeps the dock accessible beside
+tiled windows without covering application content. The panels (Operations,
+Control Center and Launcher) intentionally open above applications temporarily.
+
+For an existing installation, run `repair-desktop.ps1` from PowerShell
+within this repository, or use the `NOCTURNE_DESKTOP_FIX.zip` distribution. This backs up
+live and repository files before making changes. The optional `-Publish` flag
+commits only the Nocturne files changed by this repair to your GitHub remote.
+The included wallpaper is an original Red Team image. When cloning, use
+`install.ps1 -ApplyGlazeWM -SetWallpaper` only if you agree to replacing your
+existing GlazeWM keybindings (the installer creates a backup).

@@ -74,7 +74,7 @@ if ($ApplyGlazeWM) {
     Add-Tracked (Join-Path $theme 'glazewm\config.yaml') $glazeDestination 'glazewm\config.yaml'
 }
 if ($SetWallpaper) {
-    $wallpaper=Join-Path $theme 'wallpaper\nocturne-original.png'
+    $wallpaper=Join-Path $theme 'wallpaper\nocturne-redteam.png'
     # Save existing wallpaper path for manual restore (Windows stores wallpaper in multiple places).
     $current=(Get-ItemProperty -Path 'HKCU:\Control Panel\Desktop' -Name Wallpaper -ErrorAction SilentlyContinue).Wallpaper
     Set-Content -LiteralPath (Join-Path $backup 'previous-wallpaper-path.txt') -Value $current
@@ -103,6 +103,7 @@ if ($rainmeter -and -not $SkipRainmeter) {
     & $rainmeter '!DeactivateConfig' 'WORKSTATION\ControlCenter' | Out-Null
     & $rainmeter '!DeactivateConfig' 'WORKSTATION\Launcher' | Out-Null
     & $rainmeter '!ActivateConfig' 'WORKSTATION\Dock' 'Dock.ini' | Out-Null
+    & $rainmeter '!ZPos' '-2' 'WORKSTATION\Dock' | Out-Null
 }
 if ($StartApps) {
     foreach($cmd in @('glazewm','zebar')) {
